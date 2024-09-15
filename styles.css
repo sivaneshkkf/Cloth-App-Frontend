@@ -294,7 +294,7 @@ label{
 }
 
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:600px) {
     .main{
         position: relative;
         width: 100%;
