@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body{
     font-family: "Poppins", system-ui;
     font-weight: 500;
@@ -19,12 +20,18 @@ body{
     border-radius: 10px;
     width: 1200px;
     display: flex;
-    height: 600px;
+    height: 100vh;
     justify-content: flex-start;
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
 }
+
+
+
+
+
+/* Navigation Bar */
 .nav{
     list-style: none;
     background-color: #303442;
@@ -58,15 +65,21 @@ body{
     }
 
 }
+li{
+    list-style: none;
+}
+
+
+
+
+
+/* heading */
 .container{
     width: 100%;
     height: 100%;
     box-sizing: border-box;
     display: grid;
     grid-template-rows: 50px auto;
-}
-li{
-    list-style: none;
 }
 .heading{
     display: flex;
@@ -91,89 +104,17 @@ li{
     border-radius: 0 0 10px 0;
     padding-bottom: 100px;
 }
+
+
+
+
+
+
+
+
+/* Product screen */
 .product{
     flex: 70%;
-}
-.filter{
-    flex: 5%;
-    height: 100%;
-    position: absolute;
-    right: -400px;
-    background-color: #F6F7F8;
-    padding: 10px 40px;
-    border-radius: 0 0 10px 0;
-    transition: all 0.5s linear;
-    box-shadow: 0px 5px 10px rgba(0,0,0,0.1), 0px 6px 15px rgba(0,0,0,0.1);
-    p{
-        font-size: 10px;
-    }
-    .closeIcon{
-        cursor: pointer;
-        position: absolute;
-        right: 10px;
-        top: 10px;
-    }
-}
-.filter.hidden{
-    right: -400px;
-}
-.filter.visible{
-    right: 0;
-}
-
-/* .filterBtn:hover .filter{
-    display: block;
-}
-.closeIcon:hover{
-    display: none;
-} */
-.form{
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    justify-items: end;
-    align-items: flex-end;
-    align-content: end;
-    gap: 20px;
-}
-.input.range{
-    width: 100%;
-    input{
-        width: 200px;
-        height: 4px;
-    }
-    p{
-        margin-left: 10px;
-    }
-    
-}
-.input.range.maxRatio {
-    margin-bottom: 20px;
-}
-.input.radio.type div{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
-.input.radio.gender div{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-}
-.input.age{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    input{
-        width: 50px;
-    }
-}
-label{
-    font-size: 12px;
 }
 .product ul{
     margin: 25px;
@@ -181,9 +122,7 @@ label{
     flex-wrap: wrap;
     gap: 20px;
 }
-.product ul li{
-    
-}
+
 .cloth{
     perspective: 1000px;
 }
@@ -294,6 +233,104 @@ label{
 }
 
 
+
+
+
+
+
+
+
+/* Filter Screen */
+
+.filter{
+    flex: 5%;
+    height: 100%;
+    position: absolute;
+    right: -400px;
+    background-color: #F6F7F8;
+    padding: 10px 40px;
+    border-radius: 0 0 10px 0;
+    transition: all 0.5s linear;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.1), 0px 6px 15px rgba(0,0,0,0.1);
+    p{
+        font-size: 10px;
+    }
+    .closeIcon{
+        cursor: pointer;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+}
+.filter.hidden{
+    right: -400px;
+}
+.filter.visible{
+    right: 0;
+}
+
+/* .filterBtn:hover .filter{
+    display: block;
+}
+.closeIcon:hover{
+    display: none;
+} */
+.form{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    justify-items: end;
+    align-items: flex-end;
+    align-content: end;
+    gap: 20px;
+}
+.input.range{
+    width: 100%;
+    input{
+        width: 200px;
+        height: 4px;
+    }
+    p{
+        margin-left: 10px;
+    }
+    
+}
+.input.range.maxRatio {
+    margin-bottom: 20px;
+}
+.input.radio.type div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.input.radio.gender div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.input.age{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    input{
+        width: 50px;
+    }
+}
+label{
+    font-size: 12px;
+}
+
+
+
+
+
+
+
+/* Meadia Screen */
 @media screen and (max-width:600px) {
     .main{
         position: relative;
