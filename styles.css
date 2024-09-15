@@ -1,0 +1,339 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Poppins", system-ui;
+    font-weight: 500;
+    font-style: normal;
+    background-color: #54B2DA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+.main{
+    background-color: #ffffff;
+    border-radius: 10px;
+    width: 1200px;
+    display: flex;
+    height: 600px;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+.nav{
+    list-style: none;
+    background-color: #303442;
+    width: 60px;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    transition: width 0.3s linear;
+}
+.nav:hover{
+    width: 150px;
+    li h4{
+        width: auto;
+    }
+}
+.nav li{
+    padding: 10px;
+    margin-bottom: 5px;
+    color: white;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    gap: 8px;
+    svg {
+        width: 25px;
+        height: 25px;
+    }
+    h4{
+        width: 0;
+        overflow: hidden;
+    }
+
+}
+.container{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: 50px auto;
+}
+li{
+    list-style: none;
+}
+.heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    div:nth-of-type(1){
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       text-align: center;
+    }
+}
+.section{
+    display: flex;
+    justify-content: space-between;
+    background-color: #DBE1E4;
+    height: 100%;
+    padding-left: 10px;
+    overflow-y: scroll;
+    border-radius: 0 0 10px 0;
+    padding-bottom: 100px;
+}
+.product{
+    flex: 70%;
+}
+.filter{
+    flex: 5%;
+    height: 100%;
+    position: absolute;
+    right: -400px;
+    background-color: #F6F7F8;
+    padding: 10px 40px;
+    border-radius: 0 0 10px 0;
+    transition: all 0.5s linear;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.1), 0px 6px 15px rgba(0,0,0,0.1);
+    p{
+        font-size: 10px;
+    }
+    .closeIcon{
+        cursor: pointer;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+}
+.filter.hidden{
+    right: -400px;
+}
+.filter.visible{
+    right: 0;
+}
+
+/* .filterBtn:hover .filter{
+    display: block;
+}
+.closeIcon:hover{
+    display: none;
+} */
+.form{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    justify-items: end;
+    align-items: flex-end;
+    align-content: end;
+    gap: 20px;
+}
+.input.range{
+    width: 100%;
+    input{
+        width: 200px;
+        height: 4px;
+    }
+    p{
+        margin-left: 10px;
+    }
+    
+}
+.input.range.maxRatio {
+    margin-bottom: 20px;
+}
+.input.radio.type div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.input.radio.gender div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.input.age{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    input{
+        width: 50px;
+    }
+}
+label{
+    font-size: 12px;
+}
+.product ul{
+    margin: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.product ul li{
+    
+}
+.cloth{
+    perspective: 1000px;
+}
+
+.cardFront, .cardBack{
+    position: absolute;
+    width: 130px;
+    height: 250px;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+.cardBack{
+    transform: rotateY(180deg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+.cardCon{
+    position: relative;
+    width: 130px;
+    height: 250px;
+    background-color: white;
+    transition: all 0.5s ease;
+    transform-style: preserve-3d;
+    position: relative;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.1), 0px 6px 15px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+}
+
+.product ul .cardContent{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    img{
+        width: 130px;
+        height: 150px;
+        object-fit: cover;
+    }
+    div:last-of-type{
+        display: flex;
+        justify-content: space-between;
+    }
+    p,h6,small,div{
+        margin: 0 10px;
+    }
+    div:first-of-type{
+        display: flex;
+        width: auto;
+    }
+
+}
+
+.product ul li .cardCon:hover:not(.active){
+    transform: rotateY(35deg);
+}
+
+.cloth.active{
+    
+    .cardCon{
+        animation: anim 0.5s linear forwards;
+        transition: width 0.5s linear;
+        width: 200px;
+    }
+    .cardBack{
+        width: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0px 5px 10px rgba(0,0,0,0.1), 0px 6px 15px rgba(0,0,0,0.1);
+    }
+
+    .cardCon{
+        border-radius: 10px;
+    }
+
+}
+/* @keyframes scale{
+    from{
+        transform: scaleX(0);
+    }
+    to{
+        transform: scaleX(1);
+    }
+} */
+@keyframes anim{
+    from{
+        transform: rotateY(0deg);
+    }
+    to{
+        transform: rotateY(180deg);
+    }
+}
+
+.ClothType{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    button{
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: none;
+        background-color: #ffffff;
+    }
+
+    button.active{
+        background-color: aqua;
+    }
+}
+
+
+@media screen and (max-width:400px) {
+    .main{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        padding-bottom: 50px;
+    }
+
+    .nav{
+        width: 100%;
+        height: auto;
+        border-radius: 10px 10px 0 0;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        z-index: 10;
+        svg {
+            width: 25px;
+            height: 25px;
+        }
+    }
+    .nav:hover{
+        width: 100%;
+        li h4{
+            width: 0;
+        }
+    }
+    .cloth.active{
+    
+        .cardCon{
+            animation: anim 0.5s linear forwards;
+            transition: width 0.5s linear;
+            width: 130px;
+        }
+        .cardBack{
+            width: 100%;
+        }
+    
+    }
+    
+}
