@@ -369,10 +369,48 @@ label{
         .cardCon{
             animation: anim 0.5s linear forwards;
             transition: width 0.5s linear;
-            width: 130px;
+            width: 100%;
         }
         .cardBack{
             width: 100%;
+        }
+    
+    }
+
+    .product ul{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .cardFront, .cardBack{
+        position: absolute;
+        width: 100%;
+        height: 250px;
+    }
+    .cardCon{
+        position: relative;
+        width: 100%;
+        height: 250px;
+    }
+    .product ul .cardContent{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        img{
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        div:last-of-type{
+            display: flex;
+            justify-content: space-between;
+        }
+        p,h6,small,div{
+            margin: 0 10px;
+        }
+        div:first-of-type{
+            display: flex;
+            width: auto;
         }
     
     }
