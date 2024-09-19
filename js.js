@@ -25,6 +25,7 @@ function createLi(image,name,desc) {
     const cardCon=document.createElement("div");
     const cardFront=document.createElement("div");
     const cardBack=document.createElement("div");
+    const cardBackP=document.createElement("p")
     const cardContent=document.createElement("div");
     const img = document.createElement("img")
     const div = document.createElement("div");
@@ -39,6 +40,7 @@ function createLi(image,name,desc) {
     cardBack.className="cardBack";
     cardContent.className="cardContent";
     cardBack.style.backgroundImage = `url(${image})`;
+    cardBackP.innerText="UP to 60% Offer"
     img.src = image;
 
     img.alt = "pic";
@@ -56,6 +58,7 @@ function createLi(image,name,desc) {
     cardContent.append(h6);
     cardContent.append(small);
     cardContent.append(div2);
+    cardBack.append(cardBackP);
 
     cardFront.append(cardContent)
     cardCon.append(cardFront);
@@ -155,5 +158,8 @@ const ranges=formEl.elements.range;
 console.log(ranges);
 
 formEl.addEventListener("input", (e) => {
-    e.target.nextElementSibling.innerHTML=e.target.value.toString();
+    console.log(e.target.name);
+    if(e.target.name === "range"){
+        e.target.nextElementSibling.innerHTML=e.target.value.toString();
+    }
 })
