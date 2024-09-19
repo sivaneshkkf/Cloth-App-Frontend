@@ -217,14 +217,8 @@ li{
     }
 
 }
-/* @keyframes scale{
-    from{
-        transform: scaleX(0);
-    }
-    to{
-        transform: scaleX(1);
-    }
-} */
+
+
 @keyframes anim{
     from{
         transform: rotateY(0deg);
